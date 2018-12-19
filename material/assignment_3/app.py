@@ -36,7 +36,7 @@ def input_data(data=None):
             new_line = str(int(time()))+','+data+"\n"
             f.write(new_line)
  
-        return last_line+"\n"+new_line+"\n"
+        return last_line+new_line+"\n"
     else:
         return index_page()
 
