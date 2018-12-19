@@ -20,7 +20,7 @@ class CheckFile(object):
 
     def check(self):
         
-        stamp = os.stat(total_path).st_mtime
+        stamp = os.stat(self.data_path+'/'+self.cache_name).st_mtime
 
         if stamp != self._cache_stamp:
             self._cache_stamp = stamp
