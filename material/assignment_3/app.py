@@ -23,8 +23,12 @@ def input_data(data=None):
 
     if data:
         # Get last line
-        with open(total_path, "r") as f:
-            last_line = f.readlines()[-1]
+        try:
+            with open(total_path, "r") as f:
+                last_line = f.readlines()[-1]
+        except:
+            with open(total_path, "w") as f:
+                pass
 
         # Write new line
         with open(total_path, "a") as f:
