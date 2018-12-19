@@ -32,7 +32,7 @@ class CheckFile(object):
                         last_time = int(lines[-1].split(",")[0])
                     except:
                         last_time = 0
-                with open(self.data_path+'/'+".last_log", "w") as f:
+                with open(self.data_path+'/'+".last_log", "a") as f:
                     if self.first_time > last_time:
                         f.write("["+str(int(time()))+"]"+" --- .last file newly created!")
                         f.write("["+str(int(time()))+"]"+" --- .added "+str(new_length)+"log data!")
