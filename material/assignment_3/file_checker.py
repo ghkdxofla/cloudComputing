@@ -38,16 +38,16 @@ class CheckFile(object):
         if last_time > self.last_time:
             with open(self.data_path+'/'+".last_log", "a") as f:
                 if self.first_time < first_time:
-                    f.write("["+str(int(time()))+"]"+" --- .last file newly created!\n")
+                    # f.write("["+str(int(time()))+"]"+" --- .last file newly created, and added "+str(new_length)+" log data!\n")
                     for line in lines:
-                        f.write(line+"\n")
-                    f.write("["+str(int(time()))+"]"+" --- .added "+str(new_length)+" log data!\n")
+                        f.write(line)
                     self.first_time = first_time
 
                 else:
+                    # f.write("["+str(int(time()))+"]"+" --- .added "+str(new_length - self.file_length)+" log data!\n")
                     for line in lines[self.file_length:new_length]:
-                        f.write(line+"\n")
-                    f.write("["+str(int(time()))+"]"+" --- .added "+str(new_length - self.file_length)+" log data!\n")
+                        f.write(line)
+
 
                 self.file_length = new_length
                 self.last_time = last_time
