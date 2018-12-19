@@ -32,10 +32,10 @@ def input_data(data=None):
 
         # Write new line
         with open(total_path, "a") as f:
-            new_line = str(int(time()))+','+data
+            new_line = str(int(time()))+','+data+"\n"
             f.write(new_line)
  
-        return last_line+"\n"+new_line
+        return last_line+"\n"+new_line+"\n"
     else:
         return index_page()
 
