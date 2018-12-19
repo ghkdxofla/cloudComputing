@@ -7,7 +7,7 @@ app = Flask(__name__)
 @app.route('/')
 def index_page():
     ram = os.sysconf('SC_PAGE_SIZE') * os.sysconf('SC_PHYS_PAGES')
-    ram_total = ram / 2**20
+    ram_total = str(ram / 2**20)
 
     html_code = "Hello Container!\n"+"Total memory size of container: "+ram_total+" MiB"
 
